@@ -21,7 +21,7 @@ def 함수_이름(매개변수1, 매개변수2):
 # 함수 정의
 # def display_name(name):
 #     print(f'당신의 이름은 {name}입니다.')
-
+#
 # 함수 호출
 # display_name('김일')
 #
@@ -32,7 +32,7 @@ def 함수_이름(매개변수1, 매개변수2):
 # display_name_age(age=23, name='김삼')     # keyword argument
 '''
 우리가 예를 들어 input('이름을 입력하세요 >> ')을 이용해서 이것을 name 이라는 변수에 담았다고 가정하면, name = input('이름을 입력하세요 >> ')이라고 작성해왔습니다. 
-그러면 여태까지 input()이라는 파이썬 내장 함수를 사용하고 있었다고 볼 수 있습니ㅏㄷ. 파이썬 내장 함수는 이미 정의가 되어있고, 개발자들은 함수 호출만 잘하면 되겠네요.
+그러면 여태까지 input()이라는 파이썬 내장 함수를 사용하고 있었다고 볼 수 있습니다. 파이썬 내장 함수는 이미 정의가 되어있고, 개발자들은 함수 호출만 잘하면 되겠네요.
 
 사용자 정의 함수의 경우 개발자 자신이 함수를 정의하고, 그 후에 호출까지 하는 것까지의 과정이라고 보시면 되겠습니다.
 
@@ -62,39 +62,39 @@ print() / type() / int() / float() / input()
 # 매개변수 x / 리턴 x
 # def call1():
 #     print('[ x | x ]')
-
+#
 # 매개변수 o / 리턴 x
 # def call2(unknown_parameter):
 #     print('[ o | x ]')
 #     print(f'{unknown_parameter}라고 입력하셨나보네요.')
-
+#
 # 매개변수 x | 리턴 o
 # def call3():
 #     print('[ x | o ]')
 #     return 1
-
+#
 # 매개변수 o | 리턴 o
 # def call4(unknown1, unknown2):
 #     print('[ o | o ]')
 #     return unknown1 + unknown2
-
+#
 # call1()
 # call2('오늘의 날씨는 시원한 편')
 # call2(123456)
 # call3()     # 결과값 : [ x | o ] 만 나옴
 # print(call3())
 # 결과값
-'''
-[ x | o ]
-1
-'''
+# '''
+# [ x | o ]
+# 1
+# '''
 # print(call4('안녕', '하세요'))
 # print(call4(unknown2=1234, unknown1=5678))
 # 결과값
-'''
-[ o | o ]
-6912
-'''
+# '''
+# [ o | o ]
+# 6912
+# '''
 
 # 예제
 '''
@@ -141,13 +141,13 @@ vending_machine(3000)
 # 일단 메인에서 굴려보고 함수화 시키겠습니다.
 # my_money = 3000
 # drink_price = 700
-
+#
 # # 1 for 문으로 작성
 # change = my_money - (drink_price * 음료개수)
 # my_money를 기준으로 음료수를 살 수 있는 경우의 수를 고려했을 때 0 ~ 4 개 까지 반복문이 5번 돌아갑니다.
 # for i in range(my_money // drink_price + 1):
 #     print(f'음료수 = {i}개, 잔돈 = {my_money-(drink_price*i)}')
-
+#
 # # 2 while 문으로 작성
 # num = 0
 # while my_money >= 0:
@@ -155,7 +155,7 @@ vending_machine(3000)
 #     print(f'음료수 = {num}개, 잔돈 = {change}원')
 #         num += 1
 #     my_money -= drink_price
-
+#
 # 일단 for 문을 기준으로 함수화시키겠습니다.
 # def vending_machine(money):
 #     drink_price = 700

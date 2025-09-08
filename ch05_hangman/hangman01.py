@@ -18,13 +18,13 @@ guess = input('알파벳을 입력하세요. >> ').lower()
 
 #todo - 3 : guess에서 입력한 문자 하나가 chosen_word의 string 문자열 중에 하나의 문자와 일치하는지를 반복문을 통해 확인할 수 있도록 프로그램을 작성하시오. 맞으면 정답, 틀리면 오답이라고 출력될 수 있도록 할 것.
 
-# # 1 enhanced - for
-# for letter in chosen_word:   # str의 첫 문자부터 끝까지 알아서 굴러감
-#     if letter == guess:
-#         print('정답')
-#     else:
-#         print('오답')
-# # 2 일반 for
+# 1 enhanced - for
+for letter in chosen_word:   # str의 첫 문자부터 끝까지 알아서 굴러감
+    if letter == guess:
+        print('정답')
+    else:
+        print('오답')
+# 2 일반 for
 # len() 함수 : 반복가능 객체의 길이를 int로 return하는 함수
 # print(len(chosen_word)) # 결과값 : camel - 5
 # print(len(word_list))   # 결과값 : 3 → list 내부의 element 개수가 3 이니까

@@ -40,5 +40,5 @@ while dan < 10:
         num += 1
     dan += 1
 
-print(num)   # 추후 설명 예정
+# print(num)   # 추후 설명 예정
 # main_for.py

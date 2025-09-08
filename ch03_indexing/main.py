@@ -1,24 +1,31 @@
 str_example = 'hello, python!'
-# print(str_example[0])
-# print(str_example[1])
-# print(str_example[2])
-# print(str_example[3])
-# print(str_example[4])
-# print(str_example[5])
-# print(str_example[6])
+# print(str_example[0])       # 결과값 : h
+# print(str_example[1])       # 결과값 : e
+# print(str_example[2])       # 결과값 : l
+# print(str_example[3])       # 결과값 : l
+# print(str_example[4])       # 결과값 : o
+# print(str_example[5])       # 결과값 : ,
+# print(str_example[6])       # 결과값 :
 # print(str_example[7])
+# print(str_example[8])
+# print(str_example[9])
+# print(str_example[10])
+# print(str_example[11])
+# print(str_example[12])
+# print(str_example[13])
 
 # for alphabet in str_example:        # enhanced-for 생각하면 편함
 #     print(alphabet, end=' ')
 #
 # print('---------------')
 #
-# print(str_example[-1])
-# print(str_example[-2])
-# print(str_example[-3])
-# print(str_example[-4])
-# print(str_example[-5])
-# print(str_example[-6])
+# print(str_example[-7])      # 결과값 : p
+# print(str_example[-6])      # 결과값 : y
+# print(str_example[-5])      # 결과값 : t
+# print(str_example[-4])      # 결과값 : h
+# print(str_example[-3])      # 결과값 : o
+# print(str_example[-2])      # 결과값 : n
+# print(str_example[-1])      # 결과값 : !
 
 '''
 마이너스 인덱스 : 문자열의 뒤에서부터 부여하는 번호. 맨 마지막 데이터의 인덱스 넘버는 -1
