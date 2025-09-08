@@ -63,7 +63,7 @@ class Student:
         self.name = name
 
     def set_age(self, age):
-        if age <0 or age > 200:
+        if age < 0 or age > 200:
             print('불가능한 나이 입력입니다.')
             return          # 메서드에 return 하고 비워두면 메서드 종료라는 의미
         self.age = age
