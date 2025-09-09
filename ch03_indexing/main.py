@@ -1,4 +1,5 @@
 str_example = 'hello, python!'
+
 # print(str_example[0])       # 결과값 : h
 # print(str_example[1])       # 결과값 : e
 # print(str_example[2])       # 결과값 : l
@@ -26,7 +27,7 @@ str_example = 'hello, python!'
 # print(str_example[-3])      # 결과값 : o
 # print(str_example[-2])      # 결과값 : n
 # print(str_example[-1])      # 결과값 : !
-
+print(str_example[7:13:1])
 '''
 마이너스 인덱스 : 문자열의 뒤에서부터 부여하는 번호. 맨 마지막 데이터의 인덱스 넘버는 -1
 
@@ -39,7 +40,7 @@ a[ 시작인덱스 : 종료인덱스 : 증감값 ]
 종료인덱스 : 생략하면 끝까지 추출
 증감값 : 생략하면 1씩 증가함(인덱스 넘버가 0부터 1씩 증가한다는 뜻입니다.)
 '''
-# print(str_example[:3:]) # 0번지부터 순서대로 3번 인덱스 미만까지만 출력한다는 의미
+# print(str_example[4:5:1]) # 0번지부터 순서대로 3번 인덱스 미만까지만 출력한다는 의미
 '''
 기본 예제
 네 자리 숫자를 입력받아 그 숫자의 맨 마지막 자리 숫자를 출력하시오.

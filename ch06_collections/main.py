@@ -431,8 +431,8 @@ add_numbers3(10, hello)를 호출하면
 #     for i in range(n):
 #         numbers1.append(i+1)
 #     print(numbers1)
-
-# 함수 호출 영역
+#
+# # 함수 호출 영역
 # last_num = int(input('숫자 몇 까지 입력 하시겠습니까? >> '))
 # add_numbers1(last_num)
 #
@@ -452,18 +452,19 @@ add_numbers3(10, hello)를 호출하면
 
 # numbers3 = []
 # hello = ['안', '녕', '하', '세', '요']
-# 함수 정의 영역
+# # add_nubmers3(last_num, hello)
+# # 함수 정의 영역
 # def add_numbers3(n, temp_list):
-    # 1 다수의 수강생분들이 생각해낸 방식
-    # temp_temp_list = []
-    # for i in range(n):
-    #     temp_temp_list.append(i+1)
-    # result = temp_temp_list + temp_list
-    # print(result)
-    # # 2 강사가 생각한 방식
-    # for i in range(n):
-    #     temp_list.insert(i, i+1)
-    # print(temp_list)
+#     # 1 다수의 수강생분들이 생각해낸 방식
+#     temp_temp_list = []
+#     for i in range(n):
+#         temp_temp_list.append(i+1)
+#     result = temp_temp_list + temp_list
+#     print(result)
+#     # 2 강사가 생각한 방식
+#     for i in range(n):
+#         temp_list.insert(i, i+1)
+#     print(temp_list)
 
 '''
 내가 이것저것 적어놓은 답
