@@ -6,8 +6,9 @@
 '''
 Collection 응용 문제
 문제: 쇼핑 목록 관리하기
-사용자로부터 쇼핑 목록에 추가할 물건을 반복해서 입력받으세요. 사용자가 '끝'을 입력하면 입력을 멈춥니다. 입력받은 물건들을 리스트에 저장한 뒤, 중복된 물건들을 제거하고 최종 쇼핑 목록을 출력하는 프로그램을 작성하세요.
-
+사용자로부터 쇼핑 목록에 추가할 물건을 반복해서 입력받으세요. 사용자가 '끝'을 입력하면 입력을 멈춥니다. 
+입력받은 물건들을 리스트에 저장한 뒤, 중복된 물건들을 제거하고 최종 쇼핑 목록을 출력하는 프로그램을 작성하세요.
+        /중복된 물건들을 제거 → 리스트를 세트로 변환
 실행 예:
 
 쇼핑 목록에 추가할 물건을 입력하세요 ('끝'을 입력하면 종료): 사과
@@ -18,21 +19,21 @@ Collection 응용 문제
 
 최종 쇼핑 목록: ['사과', '바나나', '오렌지']
 '''
-shopping_list = []
-
-while True:
-    item = input("쇼핑 목록에 추가할 물건을 입력하세요 ('끝'을 입력하면 종료): ")
-    if item == '끝':
-        break
-    shopping_list.append(item)
-
-# 중복 제거를 위해 리스트를 세트로 변환
-unique_items_set = set(shopping_list)
-
-# 다시 리스트로 변환하여 출력
-final_shopping_list = list(unique_items_set)
-
-print(f"\n최종 쇼핑 목록: {final_shopping_list}")
+# shopping_list = []
+#
+# while True:
+#     item = input("쇼핑 목록에 추가할 물건을 입력하세요 (''끝을 입력하면 종료): ")
+#     if item == '끝':
+#         break
+#     shopping_list.append(item)
+#
+# # 중복 제거를 위해 리스트를 세트로 변환
+# unique_items_set = set(shopping_list)
+# # unique_items_set > set을 내가 정의한거네? shoppint_list라는 리스트를 set으로 변환
+# # 다시 리스트로 변환하여 출력
+# final_shopping_list = list(unique_items_set)    # set은 순서가 없어서? 리스트로 다시 변환
+#
+# print(f"\n최종 쇼핑 목록: {final_shopping_list}")
 
 
 '''
@@ -71,23 +72,23 @@ final_shopping_list = list(unique_items_set): 마지막으로, 다시 list() 함
 입력된 학생 정보: {'김민지': 95, '이서준': 88, '박지훈': 76}
 전체 학생의 평균 점수는 86.33점 입니다.
 '''
-students_scores = {}
-
-for i in range(3):
-    name = input(f"{i + 1}번째 학생의 이름을 입력하세요 >> ")
-    score = int(input(f"{i + 1}번째 학생의 점수를 입력하세요 >> "))
-    students_scores[name] = score
-
-# 점수만 추출하여 리스트로 변환
-scores_list = list(students_scores.values())
-
-# 평균 계산
-total_score = sum(scores_list)
-average_score = total_score / len(scores_list)
-
-print("---")
-print(f"입력된 학생 정보: {students_scores}")
-print(f"전체 학생의 평균 점수는 {average_score:.2f}점 입니다.")
+# students_scores = {}
+#
+# for i in range(3):
+#     name = input(f"{i + 1}번째 학생의 이름을 입력하세요 >> ")
+#     score = int(input(f"{i + 1}번째 학생의 점수를 입력하세요 >> "))
+#     students_scores[name] = score
+#
+# # 점수만 추출하여 리스트로 변환
+# scores_list = list(students_scores.values())
+#
+# # 평균 계산
+# total_score = sum(scores_list)
+# average_score = total_score / len(scores_list)
+#
+# print("---")
+# print(f"입력된 학생 정보: {students_scores}")
+# print(f"전체 학생의 평균 점수는 {average_score:.2f}점 입니다.")
 
 '''
 해설:
@@ -107,3 +108,92 @@ list() 함수로 변환하여 점수들만 모인 리스트를 만듭니다.
 딕셔너리의 특정 요소(값)만 추출하여 연산에 활용하는 방식을 보여주는 좋은 예시입니다. 
 '''
 
+'''
+최종문제
+문제 3 : 장바구니 + 가격 관리 시스템
+
+사용자로부터 장바구니에 담을 물건과 가격을 입력받으세요.
+
+사용자가 '끝'을 입력하면 입력을 멈춥니다.
+
+입력받은 물건은 딕셔너리에 {물건명: 가격} 형태로 저장합니다.
+
+만약 같은 물건이 여러 번 입력되면, 중복은 제거하고 마지막으로 입력한 가격을 기준으로 저장합니다.
+
+최종적으로 모든 물건 목록과 평균 가격을 출력하세요.
+
+
+
+물건 이름을 입력하세요 ('끝'을 입력하면 종료): 사과
+사과의 가격을 입력하세요 >> 1000
+물건 이름을 입력하세요 ('끝'을 입력하면 종료): 바나나
+바나나의 가격을 입력하세요 >> 2000
+물건 이름을 입력하세요 ('끝'을 입력하면 종료): 사과
+사과의 가격을 입력하세요 >> 1200
+물건 이름을 입력하세요 ('끝'을 입력하면 종료): 오렌지
+오렌지의 가격을 입력하세요 >> 1500
+물건 이름을 입력하세요 ('끝'을 입력하면 종료): 끝
+
+---
+최종 장바구니: {'사과': 1200, '바나나': 2000, '오렌지': 1500}
+평균 가격: 1566.67원
+'''
+shopping_dict = {}
+
+while True:
+    item = input("물건 이름을 입력하세요 ('끝'을 입력하면 종료): ")
+    if item == "끝":
+        break
+    price = int(input(f"{item}의 가격을 입력하세요 >> "))
+    shopping_dict[item] = price   # 같은 물건 입력 시, 마지막 가격으로 갱신됨
+    # dict 안에 key값을 넣을거기때문에 [] 대괄호. item 이 key 고 price 가 value
+    # 이름 같으면 item == item 필요없음. 왜? 자동으로 갱신된다는 뉘앙스...ㅇㅇ...
+
+print("\n---")
+print(f"최종 장바구니: {shopping_dict}")
+
+# 가격만 뽑아서 평균 계산
+prices = list(shopping_dict.values())   # 어쨋든 이게 가격만 뽑아서 list에 변환 후 저장한거.
+# 방법1
+print(shopping_dict.values())     # dict.value()는 계산 할 수 없으니까  list로 변환
+total = 0
+for p in prices:
+    total += p
+
+if len(prices) > 0:
+    average_price = total / len(prices)
+    print(f"평균 가격: {average_price:.2f}원")
+else:
+    print("장바구니가 비어 있어 평균을 계산할 수 없습니다.")
+
+# 방법2
+# total = 0
+# count = 0
+#
+# for _, price in shopping_dict.items():
+#     total += price
+#     count += 1
+#
+# if count > 0:
+#     average_price = total / count
+#     print(f"평균 가격: {average_price:.2f}원")
+# else:
+#     print("장바구니가 비어 있어 평균을 계산할 수 없습니다.")
+
+'''
+해설
+
+딕셔너리 사용 (shopping_dict)
+키(key): 물건 이름
+값(value): 가격
+
+동일한 물건을 다시 입력하면 같은 key가 갱신되므로 중복 자동 제거 효과가 생김.
+중복 처리 로직
+
+리스트 + set으로 중복 제거할 필요가 없음.
+dict는 같은 키 중복 불허 특징을 이용해서 마지막 가격만 저장.
+값만 추출 후 계산
+
+shopping_dict.values() → 가격들만 모음.
+sum() / len()으로 평균 계산.
+'''
