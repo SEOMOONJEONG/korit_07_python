@@ -179,7 +179,7 @@ else:
 #     average_price = total / count
 #     print(f"평균 가격: {average_price:.2f}원")
 # else:
-#     print("장바구니가 비어 있어 평균을 계산할 수 없습니다.")
+#     print("장바구니가 비어 있어 평  균을 계산할 수 없습니다.")
 
 '''
 해설
