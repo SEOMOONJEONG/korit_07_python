@@ -177,38 +177,62 @@ RIP 김일
 # print(Person.get_population())
 # print('프로그램 종료')
 '''
-다음 지시사항을 읽고 가게의 매출을 구할 수 있는 Shop 클래스를 작성하시오.
+다음 지시 사항을 읽고 가게의 매출을 구할 수 있는 Shop 클래스를 작성하시오.
 
-지시사항
+지시 사항
 1. Shop 클래스는 다음과 같은 변수를 가지고 있다.
     total : 가게 전체 매출액
     menu_list : {메뉴명:가격}으로 이루어진 dictionary 요소를 가진 list
     
-    menu_list = [ { '떡볶이': 3000 }, { '순대': 4000 }, { '튀김': 500 }, { '김밥': 2000 } ]
+    menu_list = [ { '떡볶이': 3000 }, { '순대' : 4000 }, 
+    { '튀김' : 500 }, { '김밥' : 2000 } ]
     
 2. 매출이 생기면 다음과 같은 방식으로 판매량을 작성합니다.
-Shop.sales('떡볶이', 1)            # 떡볶이을(를) 1 개 판매
-Shop.sales('김밥', 2)            # 김밥을(를) 2 개 판매
-Shop.sales('튀김', 5)            # 튀김을(를) 5 개 판매
+Shop.sales('떡볶이', 1)        # 떡볶이을(를) 1 개 판매
+Shop.sales('김밥', 2)        # 김밥을(를) 2 개 판매
+Shop.sales('튀김', 5)        # 튀김을(를) 5 개 판매
 
 3. 모든 매출을 작성한 뒤 다음과 같은 방식으로 전체 매출액을 확인합니다.
 print(f'매출 : {Shop.get_total()}원')
 '''
 class Shop:
     total = 0
-    menu_list = [ { '떡볶이': 3000 }, { '순대': 4000 }, { '튀김': 500 }, { '김밥': 2000 } ]
-    # 메뉴 : 가격
+    menu_list = [ { '떡볶이': 3000 }, { '순대' : 4000 }, { '튀김' : 500 }, { '김밥' : 2000 } ]
+    menu_dict = {
+        '떡볶이': 3000,
+        '순대': 4000,
+        '튀김': 500,
+        '김밥': 2000,
+    }
 
     @classmethod
     def get_total(cls):
-       return cls.total
+        return cls.total
 
     @classmethod
-    def sales(cls, menu, num):
-        for i in sales입력하는만큼:
-            num * menu의 price += price
+    def sales(cls, menu_name, quantity):
+        """list 내부의 dictionary를 반복하여 menu_name과 일치하는 key를 찾아 value를 return"""
+        for menu_dict in cls.menu_list:
+            if menu_name in menu_dict:      # 딕셔너리 내에 pair 하나 밖에 없는 상태인데, 있으면 이하의 코드라인이 실행되고 아니면 넘어갈겁니다. 그러면 다음 반복으로 가겠네요.
+                # in -> element를 기준으로 해야 하기 때문에 dictionary의 element 중 'key'를 기준
+                # 애초에 key 없으면 value를 조회 못하는게 dictionary의 특징 중 하나
+                cls.total += menu_dict[menu_name] * quantity
+                print(f'{menu_name}을(를) {quantity} 개 판매')
 
-Shop.sales('떡볶이', 1)            # 떡볶이을(를) 1 개 판매
-Shop.sales('김밥', 2)            # 김밥을(를) 2 개 판매
-Shop.sales('튀김', 5)            # 튀김을(를) 5 개 판매
+    @classmethod
+    def sales2(cls, menu_name, quantity):
+        if menu_name in cls.menu_dict: # 그러면 굳이 반복문 다 돌려서 일치하는 key가 있는지 확인할 필요가 없습니다.
+            cls.total += cls.menu_dict[menu_name] * quantity
+            print(f'{menu_name}을(를) {quantity} 개 판매')
+
+Shop.sales('떡볶이', 1)
+Shop.sales('김밥', 2)
+Shop.sales('튀김', 5)
 print(f'매출 : {Shop.get_total()}원')
+
+Shop.sales2('떡볶이', 1)
+Shop.sales2('김밥', 2)
+Shop.sales2('튀김', 5)
+print(f'매출 : {Shop.get_total()}원')
+
+# ch10_prettytable -> main / pokemon_data.py
